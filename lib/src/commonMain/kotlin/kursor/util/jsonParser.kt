@@ -19,7 +19,7 @@ private object JsonIndicator {
   val NUMBER_START = Regex("[0-9]")
 }
 
-public fun parse(json: String): JsonElement {
+internal fun parse(json: String): JsonElement {
   val buffer = StringBuffer(json)
   val result = parse(buffer)
   buffer.skip(JsonIndicator.WHITESPACE)
@@ -32,7 +32,7 @@ public fun parse(json: String): JsonElement {
   }
 }
 
-internal fun parse(buffer: StringBuffer): JsonElement {
+private fun parse(buffer: StringBuffer): JsonElement {
   buffer.skip(JsonIndicator.WHITESPACE)
   return when (val next = buffer.peek()) {
     JsonIndicator.OBJECT_START -> parseObject(buffer)

@@ -2,7 +2,7 @@ package kursor.util
 
 import kotlin.test.*
 
-class ParserTest {
+class JsonParserTest {
   @Test
   fun parsesNestedJson() {
     val json = """
@@ -33,7 +33,9 @@ class ParserTest {
       "null": null
     }
     """.trimIndent()
-    val parsed = "${parse(json)}"
-    assertEquals(parsed, "${parse(parsed)}")
+    val parsed = parse(json)
+    val parsedAgain = parse(parsed.toString())
+    assertEquals(parsed.toString(), parsedAgain.toString())
+    assertEquals(parsed, parsedAgain)
   }
 }
