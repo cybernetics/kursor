@@ -1,2 +1,2 @@
 rootProject.name = "kursor"
-include("lib")
+include("kursor")
