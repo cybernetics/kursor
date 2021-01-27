@@ -1,2 +1,2 @@
 # kursor
-kotlin Multiplatform implementation of JSON Path spec
+Kotlin Multiplatform implementation of [JSONPath](https://goessner.net/articles/JsonPath/) specification.
